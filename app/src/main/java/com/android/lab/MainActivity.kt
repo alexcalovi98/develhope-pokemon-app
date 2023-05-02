@@ -1,9 +1,9 @@
 package com.android.lab
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.android.lab.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,8 +18,15 @@ class MainActivity : AppCompatActivity() {
             R.layout.activity_main
         )
 
-        binding.navigationFirstButton.setOnClickListener { Log.d(TAG, "Navigate to first fragment") }
-        binding.navigationSecondButton.setOnClickListener { Log.d(TAG, "Navigate to second fragment") }
+        binding.bottomNavigation.setOnItemSelectedListener {
+            val navController = binding.navHostFragment.findNavController()
+            when(it.itemId) {
+                R.id.action_home -> navController.navigate(R.id.homeFragment)
+                R.id.action_pokemon -> navController.navigate(R.id.pokemonFragment)
+                else -> return@setOnItemSelectedListener false
+            }
+            return@setOnItemSelectedListener true
+        }
     }
 
     companion object {

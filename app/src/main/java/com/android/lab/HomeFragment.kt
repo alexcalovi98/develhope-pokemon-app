@@ -1,17 +1,17 @@
 package com.android.lab
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.android.lab.databinding.FragmentFirstBinding
+import androidx.fragment.app.Fragment
+import com.android.lab.databinding.FragmentHomeBinding
 import kotlin.random.Random.Default.nextInt
 
-class FirstFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentFirstBinding
+    private lateinit var binding: FragmentHomeBinding
 
     private val strings = listOf("Wonderful!", "Nice!", "Beautiful!")
 
@@ -20,7 +20,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
         binding.pokemonImage.setOnClickListener {
             binding.wonderfulTextView.text = strings[nextInt(0, 3)]

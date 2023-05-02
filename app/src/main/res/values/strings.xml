@@ -3,4 +3,10 @@
     <string name="first_fragment">First fragment</string>
     <string name="fragment_first_navigation">Fragment 1</string>
     <string name="fragment_second_navigation">Fragment 2</string>
+
+    <!--Navigation-->
+    <string name="navigation_home">Home</string>
+    <string name="navigation_pokemon">Pokemon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
