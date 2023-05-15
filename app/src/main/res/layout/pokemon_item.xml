@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="20dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/pokemonImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:src="@drawable/pokemon_ball"/>
+
+    <TextView
+        android:id="@+id/textPokemon"
+        tools:text="Pokemon Name"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        app:cardBackgroundColor="@color/colorSecondary"
-        app:contentPadding="20dp">
+        android:layout_marginStart="10dp"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/pokemon_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Pokemon" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-</FrameLayout>
+</LinearLayout>

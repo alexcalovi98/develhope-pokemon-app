@@ -7,4 +7,7 @@
     <!--Navigation-->
     <string name="navigation_home">Home</string>
     <string name="navigation_pokemon">Pokemon</string>
+
+    <string name="mewtwo">Mewtwo</string>
+    <string name="giratina">Giratina</string>
 </resources>

@@ -12,6 +12,7 @@ class PokemonFragment : Fragment() {
 
     private lateinit var binding: FragmentPokemonBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,9 +25,10 @@ class PokemonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pokemonList = listOf("Pikachu", "Bulbasaur", "Charmander", "Squirtle")
+        val pokemonList = listOf<PokemonItem>(PokemonItem(android.R.drawable.ic_menu_report_image, R.string.mewtwo))
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-        binding.pokemonList.adapter = PokemonAdapter(pokemonList)
-        binding.pokemonList.layoutManager = LinearLayoutManager(context)
+        val adapter = PokemonAdapter(pokemonList)
+        binding.recyclerView.adapter = adapter
     }
 }
