@@ -7,4 +7,5 @@ plugins {
 
 ext {
     navVersion = "2.5.3"
+    retrofitVersion = "2.9.0"
 }

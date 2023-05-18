@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "test-live-coding-app"
+rootProject.name = "develhope-first-group-android-lab"
 include ':app'
