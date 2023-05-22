@@ -53,6 +53,9 @@ class PokemonFragment : Fragment() {
             pokemonResult.results.forEach {
                 Log.d(TAG, "$it")
             }
+
+            val bulbasaurDetails = pokeAPI.getPokemonDetails("bulbasaur")
+            Log.d(TAG, "$bulbasaurDetails")
         }
     }
 
