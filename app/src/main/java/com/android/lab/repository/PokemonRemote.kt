@@ -1,3 +1,3 @@
 package com.android.lab.repository
 
-data class PokemonRemote(private val name: String)
+data class PokemonRemote(val name: String)

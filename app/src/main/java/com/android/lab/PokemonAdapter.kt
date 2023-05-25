@@ -3,14 +3,23 @@ package com.android.lab
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.ImageLoader
+import coil.decode.SvgDecoder
+import coil.load
 import com.android.lab.databinding.PokemonItemBinding
 
-class PokemonAdapter(private val items : List<PokemonItem>) : RecyclerView.Adapter<PokemonAdapter.ViewHolder> () {
+class PokemonAdapter(private val items : MutableList<PokemonItem> = mutableListOf()) : RecyclerView.Adapter<PokemonAdapter.ViewHolder> () {
 
     inner class ViewHolder(private val binding : PokemonItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        private val imageLoader = ImageLoader.Builder(itemView.context)
+            .components {
+                add(SvgDecoder.Factory())
+            }.build()
+
         fun onBind(item : PokemonItem) {
-            binding.pokemonImage.setImageResource(item.image)
-            binding.textPokemon.setText(item.text)
+            binding.pokemonImage.load(item.image, imageLoader)
+            binding.textPokemon.text = item.text
         }
     }
 
@@ -24,7 +33,10 @@ class PokemonAdapter(private val items : List<PokemonItem>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(items[position])
-
     }
 
+    fun addItems(itemsToAdd: List<PokemonItem>){
+        items.addAll(itemsToAdd)
+        notifyDataSetChanged() //TODO use notifyItemRangeChanged
+    }
 }

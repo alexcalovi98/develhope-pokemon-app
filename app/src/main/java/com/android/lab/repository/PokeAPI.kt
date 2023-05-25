@@ -9,5 +9,5 @@ interface PokeAPI {
     suspend fun getPokemon(): PokemonResultRemote
 
     @GET("pokemon/{name}")
-    suspend fun getPokemonDetails(@Path ("name") name: String): PokemonDetailsRemote
+    suspend fun getPokemonDetails(@Path("name") name: String): PokemonDetailsRemote
 }
