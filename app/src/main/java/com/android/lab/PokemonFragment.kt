@@ -44,7 +44,7 @@ class PokemonFragment : Fragment() {
         val pokeAPI = retrofit.create(PokeAPI::class.java)
 
         lifecycleScope.launch {
-            val pokemonResult = pokeAPI.getPokemon()
+            val pokemonResult = pokeAPI.getPokemon(20, 0)
             val pokemonItems = mutableListOf<PokemonItem>()
             pokemonResult.results.forEach {
                 val d = pokeAPI.getPokemonDetails(it.name)
