@@ -1,4 +1,4 @@
-package com.android.lab.repository
+package com.android.lab.data
 
 import com.google.gson.annotations.SerializedName
 

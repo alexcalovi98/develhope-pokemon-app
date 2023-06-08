@@ -1,4 +1,4 @@
-package com.android.lab.repository
+package com.android.lab.data
 
 import retrofit2.http.GET
 import retrofit2.http.Path

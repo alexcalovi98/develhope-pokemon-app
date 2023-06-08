@@ -1,4 +1,4 @@
-package com.android.lab
+package com.android.lab.ui.main.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

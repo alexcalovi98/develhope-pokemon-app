@@ -1,8 +1,9 @@
-package com.android.lab
+package com.android.lab.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import com.android.lab.R
 import com.android.lab.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

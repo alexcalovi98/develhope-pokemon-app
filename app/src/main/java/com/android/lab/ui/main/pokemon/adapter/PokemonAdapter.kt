@@ -1,4 +1,4 @@
-package com.android.lab
+package com.android.lab.ui.main.pokemon.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

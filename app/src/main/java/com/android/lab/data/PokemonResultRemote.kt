@@ -1,4 +1,4 @@
-package com.android.lab.repository
+package com.android.lab.data
 
 data class PokemonResultRemote(
     val results: List<PokemonRemote>
