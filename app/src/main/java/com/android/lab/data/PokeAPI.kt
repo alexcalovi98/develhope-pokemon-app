@@ -1,5 +1,7 @@
 package com.android.lab.data
 
+import com.android.lab.data.models.PokemonDetailsRemote
+import com.android.lab.data.models.PokemonResultRemote
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

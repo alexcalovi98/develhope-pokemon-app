@@ -1,4 +1,6 @@
-package com.android.lab.data
+package com.android.lab.data.models
+
+import com.android.lab.data.models.PokemonRemote
 
 data class PokemonResultRemote(
     val results: List<PokemonRemote>

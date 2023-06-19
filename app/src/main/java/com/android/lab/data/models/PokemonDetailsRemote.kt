@@ -1,4 +1,4 @@
-package com.android.lab.data
+package com.android.lab.data.models
 
 import com.google.gson.annotations.SerializedName
 
