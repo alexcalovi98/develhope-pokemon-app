@@ -4,14 +4,13 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.lab.data.PokemonRepository
 import com.android.lab.domain.usecase.GetPokemonUseCase
 import com.android.lab.ui.main.pokemon.adapter.PokemonItem
 import kotlinx.coroutines.launch
 
-class PokemonViewModel: ViewModel() {
-
-    private val getPokemonUseCase = GetPokemonUseCase()
+class PokemonViewModel(
+    private val getPokemonUseCase: GetPokemonUseCase
+): ViewModel() {
 
     val pokemonLiveData = MutableLiveData<List<PokemonItem>>()
 

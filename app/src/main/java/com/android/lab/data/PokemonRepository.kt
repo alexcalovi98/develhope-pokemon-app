@@ -4,19 +4,7 @@ import com.android.lab.domain.models.Pokemon
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PokemonRepository {
-
-    private val pokeAPI: PokeAPI
-
-    init {
-        //Retrofit client creation
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        pokeAPI = retrofit.create(PokeAPI::class.java)
-    }
+class PokemonRepository(private val pokeAPI: PokeAPI) {
 
     suspend fun getPokemon(limit: Int, offset: Int): List<Pokemon> {
         val pokemonResult = pokeAPI.getPokemon(limit, offset)

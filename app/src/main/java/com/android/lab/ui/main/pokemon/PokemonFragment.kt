@@ -1,7 +1,6 @@
 package com.android.lab.ui.main.pokemon
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,9 @@ import com.android.lab.ui.main.pokemon.adapter.PokemonAdapter
 
 class PokemonFragment : Fragment() {
 
-    private val viewModel: PokemonViewModel by viewModels()
+    private val viewModel: PokemonViewModel by viewModels {
+        PokemonViewModelFactory()
+    }
 
     private lateinit var binding: FragmentPokemonBinding
 
@@ -24,7 +25,6 @@ class PokemonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentPokemonBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
