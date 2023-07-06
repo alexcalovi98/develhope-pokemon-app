@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -47,12 +48,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
 
+    //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
-    implementation("io.coil-kt:coil:2.4.0")
-    implementation("io.coil-kt:coil-svg:2.4.0")
+    //Coil
+    implementation "io.coil-kt:coil:$coilVersion"
+    implementation "io.coil-kt:coil-svg:$coilVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 }

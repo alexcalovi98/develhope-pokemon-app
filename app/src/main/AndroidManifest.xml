@@ -4,9 +4,11 @@
 
     <!-- permission to access internet and perform network calls via api -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
+        android:name=".PokemonApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

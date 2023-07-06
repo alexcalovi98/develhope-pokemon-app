@@ -8,4 +8,6 @@ plugins {
 ext {
     navVersion = "2.5.3"
     retrofitVersion = "2.9.0"
+    roomVersion = "2.5.2"
+    coilVersion = "2.4.0"
 }

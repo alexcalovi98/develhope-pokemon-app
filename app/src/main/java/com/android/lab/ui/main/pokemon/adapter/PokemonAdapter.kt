@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.ImageLoader
 import coil.decode.SvgDecoder
+import coil.disk.DiskCache
 import coil.load
 import com.android.lab.databinding.PokemonItemBinding
 
@@ -13,7 +14,12 @@ class PokemonAdapter(private val items : MutableList<PokemonItem> = mutableListO
     inner class ViewHolder(private val binding : PokemonItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         private val imageLoader = ImageLoader.Builder(itemView.context)
-            .components {
+            .diskCache {
+                DiskCache.Builder()
+                    .directory(itemView.context.cacheDir.resolve("image_cache"))
+                    .maxSizePercent(0.02)
+                    .build()
+            }.components {
                 add(SvgDecoder.Factory())
             }.build()
 
