@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:title="@string/navigation_home"
+        android:icon="@drawable/navigation_home" />
+
+    <item android:id="@+id/action_pokemon"
+        android:title="@string/navigation_pokemon"
+        android:icon="@drawable/navigation_pokemon" />
+
+</menu>
