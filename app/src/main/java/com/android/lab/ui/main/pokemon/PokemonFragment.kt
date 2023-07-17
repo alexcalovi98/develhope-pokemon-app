@@ -5,20 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.lab.databinding.FragmentPokemonBinding
 import com.android.lab.ui.main.pokemon.adapter.PokemonAdapter
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PokemonFragment : Fragment() {
 
-    private val viewModel: PokemonViewModel by viewModels {
-        PokemonViewModelFactory()
-    }
+    private val viewModel: PokemonViewModel by viewModel()
 
     private lateinit var binding: FragmentPokemonBinding
 

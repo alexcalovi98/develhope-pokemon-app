@@ -10,4 +10,5 @@ ext {
     retrofitVersion = "2.9.0"
     roomVersion = "2.5.2"
     coilVersion = "2.4.0"
+    koinVersion = "3.4.2"
 }

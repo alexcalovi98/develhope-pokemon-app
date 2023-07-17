@@ -6,19 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.android.lab.data.DataDependencyInjection
 import com.android.lab.databinding.FragmentHomeBinding
-import com.android.lab.ui.main.pokemon.PokemonViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.random.Random.Default.nextInt
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-    private val viewModel: HomeViewModel by viewModels {
-        HomeViewModelFactory()
-    }
+    private val viewModel: HomeViewModel by viewModel()
 
     private val strings = listOf("Wonderful!", "Nice!", "Beautiful!")
 

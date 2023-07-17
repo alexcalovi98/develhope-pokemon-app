@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     companion object {
         val TAG: String = MainActivity::class.java.simpleName
     }
