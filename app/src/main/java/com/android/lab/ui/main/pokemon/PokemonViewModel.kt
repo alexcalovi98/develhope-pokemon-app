@@ -6,13 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.lab.domain.usecase.GetPokemonUseCase
 import com.android.lab.ui.main.pokemon.adapter.PokemonItem
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 
 class PokemonViewModel(
     private val getPokemonUseCase: GetPokemonUseCase
 ): ViewModel() {
 
-    val pokemonLiveData = MutableLiveData<List<PokemonItem>>()
+    val pokemonSharedFlow = MutableSharedFlow<List<PokemonItem>>()
+    //Previous Live Data
+    //val pokemonLiveData = MutableLiveData<List<PokemonItem>>()
 
     fun downloadPokemon() {
         viewModelScope.launch {
@@ -28,7 +31,9 @@ class PokemonViewModel(
             Log.d(TAG, "$pokemonList")
 
             //Update pokemon list
-            pokemonLiveData.postValue(pokemonItems)
+            pokemonSharedFlow.emit(pokemonItems)
+            //Previous Live Data
+            //pokemonLiveData.postValue(pokemonItems)
         }
     }
 

@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.lab.databinding.FragmentPokemonBinding
 import com.android.lab.ui.main.pokemon.adapter.PokemonAdapter
+import kotlinx.coroutines.launch
 
 class PokemonFragment : Fragment() {
 
@@ -31,9 +35,15 @@ class PokemonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.pokemonLiveData.observe(viewLifecycleOwner) {
-            adapter.addItems(it)
+        lifecycleScope.launch {
+            viewModel.pokemonSharedFlow.collect {
+                adapter.addItems(it)
+            }
         }
+        //Previous Live Data
+        /*viewModel.pokemonLiveData.observe(viewLifecycleOwner) {
+            adapter.addItems(it)
+        }*/
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         adapter = PokemonAdapter()
