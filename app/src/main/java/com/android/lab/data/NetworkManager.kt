@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
+import android.util.Log
 
 object NetworkManager: ConnectivityManager.NetworkCallback() {
 
@@ -31,6 +32,8 @@ object NetworkManager: ConnectivityManager.NetworkCallback() {
 
     override fun onLost(network: Network) {
         super.onLost(network)
-        isConnected = false
+        if(connectivityManager.activeNetwork == null) {
+            isConnected = false
+        }
     }
 }

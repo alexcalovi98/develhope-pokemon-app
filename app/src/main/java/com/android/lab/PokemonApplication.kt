@@ -1,6 +1,7 @@
 package com.android.lab
 
 import android.app.Application
+import com.android.lab.data.NetworkManager
 import com.android.lab.data.dataModule
 import com.android.lab.domain.domainModule
 import com.android.lab.ui.uiModule
@@ -12,6 +13,7 @@ class PokemonApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        NetworkManager.start(this)
         startDependencyInjectionWithKoin()
     }
 
