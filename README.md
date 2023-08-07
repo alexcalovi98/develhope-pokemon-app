@@ -23,14 +23,9 @@ We managed also the offline status of devices, so the data are saved locally usi
 
 <img src="resources/pokemon.png" width="200">
 
-### Contributors
+## Collaborators
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END --
-
+Here the names of my students that have collaborated with me to develop this application:
+- Aurelio di Marco
+- Giovanni D'Amico
+- Margherita Improda
