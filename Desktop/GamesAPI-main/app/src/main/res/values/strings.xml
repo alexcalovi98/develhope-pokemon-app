@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Develhope-BasketBall</string>
+    <string name="press_the_button">Press the button</string>
+    <string name="press">PRESS</string>
+    <string name="games_list">Games List</string>
+    <string name="title">Title</string>
+    <string name="genre">Genre</string>
+</resources>
